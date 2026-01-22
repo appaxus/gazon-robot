@@ -335,18 +335,24 @@
         /* Photo Carousel */
         .hero-carousel {
             width: 100%;
-            max-width: 1000px;
-            margin: 40px auto;
+            max-width: 860px;
+            margin: 36px auto;
             position: relative;
-            border-radius: 16px;
-            overflow: hidden;
-            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            border-radius: 18px;
+            overflow: visible;
+            box-shadow: 0 12px 30px rgba(15, 23, 42, 0.12);
+            background: linear-gradient(180deg, rgba(255, 255, 255, 0.85) 0%, rgba(248, 250, 252, 0.9) 100%);
+            border: 1px solid rgba(226, 232, 240, 0.6);
+            /* Updated carousel container visuals for lighter, premium feel */
         }
 
         .carousel-container {
             position: relative;
             width: 100%;
             overflow: hidden;
+            border-radius: 18px;
+            background: transparent;
+            /* Keep slide background transparent with rounded corners */
         }
 
         .carousel-track {
@@ -356,16 +362,18 @@
 
         .carousel-slide {
             min-width: 100%;
-            height: 420px;
+            aspect-ratio: 4 / 3;
             position: relative;
-            background-color: #f7fafc;
+            background-color: transparent;
+            /* Enforce 4:3 ratio without solid backgrounds */
         }
 
         .carousel-slide img {
             width: 100%;
             height: 100%;
-            object-fit: contain;
+            object-fit: cover;
             display: block;
+            /* Ensure images fully cover slide without gaps */
         }
 
         .carousel-nav {
@@ -404,24 +412,28 @@
         .carousel-dots {
             display: flex;
             justify-content: center;
-            gap: 12px;
-            margin-top: 20px;
+            align-items: center;
+            gap: 10px;
+            margin: 14px 0 6px;
+            /* Keep dots directly below the image */
         }
 
         .carousel-dot {
-            width: 12px;
-            height: 12px;
-            border-radius: 50%;
+            width: 8px;
+            height: 8px;
+            border-radius: 999px;
             background: #cbd5e0;
             border: none;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: width 0.3s ease, background 0.3s ease, transform 0.3s ease;
+            /* Minimal, modern pagination styling */
         }
 
         .carousel-dot.active {
             background: #2c7a7b;
-            width: 32px;
-            border-radius: 6px;
+            width: 28px;
+            transform: scale(1.05);
+            /* Subtle active dot emphasis */
         }
 
         .hero-image {
@@ -1310,8 +1322,10 @@
                 grid-template-columns: 1fr;
             }
 
-            .carousel-slide {
-                height: 300px;
+            .hero-carousel {
+                max-width: 92%;
+                margin: 32px auto;
+                /* Slightly smaller carousel on mobile */
             }
 
             .cta-section {
